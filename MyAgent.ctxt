@@ -1,0 +1,77 @@
+#BlueJ class context
+comment0.params=game\ iAmRed
+comment0.target=MyAgent(Connect4Game,\ boolean)
+comment0.text=\r\n\ Constructs\ a\ new\ agent,\ giving\ it\ the\ game\ and\ telling\ it\ whether\ it\ is\r\n\ Red\ or\ Yellow.\r\n\ \r\n\ @param\ game\ The\ game\ the\ agent\ will\ be\ playing.\r\n\ @param\ iAmRed\ True\ if\ the\ agent\ is\ Red,\ False\ if\ the\ agent\ is\ Yellow.\r\n
+comment1.params=
+comment1.target=boolean\ isNewGame()
+comment1.text=\r\n\ Check\ if\ this\ is\ the\ first\ move.\ \ This\ will\ either\ be\ if\ the\ bottom\ row\ is\ empty\r\n\ or\ the\ opponent\ has\ placed\ only\ one\ token\ on\ the\ bottom\ row\ (i.e.\ they\ started\ first)\r\n\ @return\ true\ if\ this\ is\ a\ new\ game\r\n
+comment10.params=columnNumber
+comment10.target=void\ moveOnColumn(int)
+comment10.text=\r\n\ Drops\ a\ token\ into\ a\ particular\ column\ so\ that\ it\ will\ fall\ to\ the\ bottom\r\n\ of\ the\ column.\ If\ the\ column\ is\ already\ full,\ nothing\ will\ change.\r\n\ \r\n\ @param\ columnNumber\ The\ column\ into\ which\ to\ drop\ the\ token.\r\n
+comment11.params=colour\ matches\ slot
+comment11.target=int\ incrementMatches(Colour,\ int,\ Connect4Slot)
+comment11.text=\ Keeps\ track\ of\ the\ total\ number\ of\ matches\r\n\ \r\n\ @param\ colour\ Colour\ to\ find\ matches\ of.\r\n\ @param\ matches\ gets\ incremented\ if\ a\ match\ is\ found.\r\n\ @param\ slot\ slot\ to\ be\ tested\ for\ a\ matching\ token\r\n\ @return\ int\ matches\r\n
+comment12.params=column
+comment12.target=int\ getLowestEmptyIndex(Connect4Column)
+comment12.text=\r\n\ Returns\ the\ index\ of\ the\ top\ empty\ slot\ in\ a\ column.\r\n\ \r\n\ @param\ column\ The\ column\ to\ check.\r\n\ @return\ the\ index\ of\ the\ top\ empty\ slot\ in\ a\ particular\ column;\ -1\ if\ the\ column\ is\ already\ full.\r\n
+comment13.params=
+comment13.target=int\ randomMove()
+comment13.text=\r\n\ Returns\ a\ random\ valid\ move.\ If\ your\ agent\ doesn't\ know\ what\ to\ do,\r\n\ making\ a\ random\ move\ can\ allow\ the\ game\ to\ go\ on\ anyway.\r\n\ \r\n\ @return\ a\ random\ valid\ move.\r\n
+comment14.params=match
+comment14.target=boolean\ iCanWin(Match)
+comment14.text=\r\n\ Returns\ the\ column\ that\ would\ allow\ the\ agent\ to\ win.\r\n\ \r\n\ You\ might\ want\ your\ agent\ to\ check\ to\ see\ if\ it\ has\ a\ winning\ move\r\n\ available\ to\ it\ so\ that\ it\ can\ go\ ahead\ and\ make\ that\ move.\ Implement\r\n\ this\ method\ to\ return\ what\ column\ would\ allow\ the\ agent\ to\ win.\r\n\r\n\ @return\ the\ column\ that\ would\ allow\ the\ agent\ to\ win.\r\n
+comment15.params=
+comment15.target=int\ theyCanWin()
+comment15.text=\r\n\ Returns\ the\ column\ that\ would\ allow\ the\ opponent\ to\ win.\r\n\ \r\n\ You\ might\ want\ your\ agent\ to\ check\ to\ see\ if\ the\ opponent\ would\ have\ any\r\n\ winning\ moves\ available\ so\ your\ agent\ can\ block\ them.\ Implement\ this\r\n\ method\ to\ return\ what\ column\ should\ be\ blocked\ to\ prevent\ the\ opponent\r\n\ from\ winning.\r\n\r\n\ @return\ the\ column\ that\ would\ allow\ the\ opponent\ to\ win.\r\n
+comment16.params=
+comment16.target=java.lang.String\ getName()
+comment16.text=\r\n\ Returns\ the\ name\ of\ this\ agent.\r\n\r\n\ @return\ the\ agent's\ name\r\n
+comment17.params=columnIndex\ colour
+comment17.target=int\ calcVerticalMatch(int,\ Colour)
+comment17.text=\r\n\ Counts\ the\ number\ of\ VERTICAL\ matches\ a\ column\ has.\r\n\ *\ 0|_|___|___|___|___|___|___|\ \r\n\ 1|\ R_|_R_|___|___|___|_R_|_Y_|\ \r\n\ 2|\ Y_|_Y_|_R_|_T_|_R_|_R_|_Y_|\ T\ \=\ Test\ slot\ \r\n\ 3|\ Y_|_Y_|_R_|_*_|_Y_|_Y_|_R_|\ *\ \=\ Potential\ match\ slots\ tested\ by\ method\ \r\n\ 4|\ R_|_R_|_Y_|_*_|_R_|_Y_|_R_|\ R\ \=\ Red\ Token\ \r\n\ 5|\ Y_|_R_|_R_|_*_|_Y_|_R_|_R_|\ Y\ \=\ Yellow\ Token\ \r\n\ \ \ \ 0\ |\ 1\ |\ 2\ |\ 3\ |\ 4\ |\ 5\ |\ 6\ |\r\n\ \r\n\ @param\ columnIndex\ the\ column\ to\ be\ tested.\r\n\ @param\ colour\ the\ colour\ to\ find\ matches\ of.\r\n\ @return\ int\ matches\ holding\ the\ current\ total\ of\ matching\ tokens.\r\n
+comment18.params=colour\ matches\ slot
+comment18.target=boolean\ nonMatchedTokenFound(Colour,\ int,\ Connect4Slot)
+comment18.text=\r\n\ Tests\ a\ slot\ to\ see\ if\ it\ contains\ a\ token\ that\ does\ NOT\ match\r\n\ \r\n\ @param\ colour\ the\ colour\ of\ the\ token\ that\ is\ NOT\ matching\ the\ tested\ slot.\r\n\ @param\ matches\ holds\ the\ current\ count\ of\ matches.\ \r\n\ @param\ slot\ slot\ being\ tested\ for\ a\ non\ matching\ token.\r\n\ @return\ True\ if\ a\ token\ is\ found\ that\ is\ NOT\ a\ match\ for\ the\ colour\ parameter.\r\n
+comment19.params=columnIndex\ colour
+comment19.target=int\ calcLeftDownMatch(int,\ Colour)
+comment19.text=\r\n\ Looks\ for\ matches\ to\ the\ 'LEFT'\ and\ 'DOWN'\ of\ the\ test\ slot.\ If\ match\ found\r\n\ tests\ next\ left\ column\ and\ next\ row\ down.\ \ Example\ Board\:\r\n\ 0|__|___|___|___|___|___|___|\ \r\n\ 1|\ R_|_R_|___|___|___|_R_|_Y_|\ \r\n\ 2|\ Y_|_Y_|_R_|_T_|_R_|_R_|_Y_|\ T\ \=\ Test\ slot\ \r\n\ 3|\ Y_|_Y_|_*_|_Y_|_Y_|_Y_|_R_|\ *\ \=\ Potential\ match\ slots\ tested\ by\ method\ \r\n\ 4|\ R_|_*_|_Y_|_R_|_R_|_Y_|_R_|\ R\ \=\ Red\ Token\ \r\n\ 5|\ *_|_R_|_R_|_R_|_Y_|_R_|_R_|\ Y\ \=\ Yellow\ Token\ \r\n\ \ \ \ 0\ |\ 1\ |\ 2\ |\ 3\ |\ 4\ |\ 5\ |\ 6\ |\r\n\ \r\n\ @param\ columnIndex\ column\ number\ to\ test\ lowest\ empty\ slot\ of.\r\n\ @param\ colour\ colour\ of\ token\ to\ seek\ matches\ for.\r\n\ @return\ int\ matches\ holding\ current\ total\ count\ of\ matching\ tokens.\r\n
+comment2.params=
+comment2.target=void\ makeOpeningMove()
+comment2.text=\r\n\ This\ method\ makes\ the\ opening\ move.\ \ It\ tries\ to\ place\ in\ the\ middle\ slot\ of\ the\ board.\r\n\ If\ the\ opponent\ has\ already\ taken\ that\ slot\ it\ will\ place\ next\ to\ it.\ \ This\ prevents\r\n\ the\ opponent\ getting\ three\ in\ a\ row\ with\ open\ slots\ each\ side.\r\n
+comment20.params=columnIndex\ colour
+comment20.target=int\ calcLeftUpMatch(int,\ Colour)
+comment20.text=\r\n\ Looks\ for\ matches\ to\ the\ 'UP'\ and\ to\ the\ 'LEFT'\ of\ the\ test\ slot.\ If\ match\ found\r\n\ tests\ next\ left\ column\ and\ next\ row\ down.\ Example\ board\:\r\n\ 0|_*_|___|___|___|___|___|___|\ \r\n\ 1|\ R_|_*_|___|___|___|_R_|_Y_|\ \r\n\ 2|\ Y_|_Y_|_*_|___|_R_|_R_|_Y_|\ T\ \=\ Test\ slot\ \r\n\ 3|\ Y_|_Y_|_R_|_T_|_Y_|_Y_|_R_|\ *\ \=\ Potential\ match\ slots\ tested\ by\ method\ \r\n\ 4|\ R_|_R_|_Y_|_R_|_R_|_Y_|_R_|\ R\ \=\ Red\ Token\ \r\n\ 5|\ Y_|_R_|_R_|_R_|_Y_|_R_|_R_|\ Y\ \=\ Yellow\ Token\ \r\n\ \ \ \ 0\ |\ 1\ |\ 2\ |\ 3\ |\ 4\ |\ 5\ |\ 6\ |\r\n\ \r\n\ @param\ columnIndex\ Column\ to\ test\ lowest\ empty\ slot\ in.\r\n\ @param\ colour\ of\ token\ to\ seek\ matches\ for.\r\n\ @return\ int\ matches\ holding\ current\ total\ of\ matching\ tokens.\r\n
+comment21.params=columnIndex\ colour
+comment21.target=int\ calcRightUpMatch(int,\ Colour)
+comment21.text=\r\n\ Looks\ for\ matches\ to\ the\ RIGHT\ and\ UP\ of\ the\ test\ slot.\ If\ match\ found\r\n\ tests\ next\ left\ column\ and\ next\ row\ down.\ \ Example\ Board\:\r\n\ 0|___|___|___|___|___|___|_*_|\ \r\n\ 1|\ R_|_R_|___|___|___|_*_|_Y_|\ \r\n\ 2|\ Y_|_Y_|_R_|___|_*_|_R_|_Y_|\ T\ \=\ Test\ slot\ \r\n\ 3|\ Y_|_Y_|_R_|_T_|_Y_|_Y_|_R_|\ *\ \=\ Potential\ match\ slots\ tested\ by\ method\ \r\n\ 4|\ R_|_R_|_Y_|_R_|_R_|_Y_|_R_|\ R\ \=\ Red\ Token\ \r\n\ 5|\ Y_|_R_|_R_|_R_|_Y_|_R_|_R_|\ Y\ \=\ Yellow\ Token\ \r\n\ \ \ \ 0\ |\ 1\ |\ 2\ |\ 3\ |\ 4\ |\ 5\ |\ 6\ |\r\n\ \r\n\ @param\ columnIndex\ column\ number\ to\ test\ lowest\ empty\ slot\ of.\r\n\ @param\ colour\ colour\ of\ token\ to\ seek\ matches\ for.\r\n\ @return\ int\ matches\ holding\ current\ total\ of\ matching\ tokens.\r\n
+comment22.params=columnIndex\ colour
+comment22.target=int\ calcRightDownMatch(int,\ Colour)
+comment22.text=\r\n\ Looks\ for\ matches\ to\ the\ 'RIGHT'\ and\ 'DOWN'\ of\ the\ test\ slot.\ If\ match\ found\r\n\ tests\ next\ left\ column\ and\ next\ row\ down.\ \ Example\ Board\:\r\n\ 0|__|___|___|___|___|___|___|\ \r\n\ 1|\ R_|_R_|___|___|___|_R_|_Y_|\ \r\n\ 2|\ Y_|_Y_|_R_|___|_R_|_R_|_Y_|\ T\ \=\ Test\ slot\ \r\n\ 3|\ Y_|_Y_|_R_|_T_|_Y_|_Y_|_R_|\ *\ \=\ Potential\ match\ slots\ tested\ by\ method\ \r\n\ 4|\ R_|_R_|_Y_|_R_|_*_|_Y_|_R_|\ R\ \=\ Red\ Token\ \r\n\ 5|\ Y_|_R_|_R_|_R_|_Y_|_*_|_R_|\ Y\ \=\ Yellow\ Token\ \r\n\ \ \ \ 0\ |\ 1\ |\ 2\ |\ 3\ |\ 4\ |\ 5\ |\ 6\ |\r\n\ \r\n\ @param\ columnIndex\ column\ number\ to\ test\ lowest\ empty\ slot\ of.\r\n\ @param\ colour\ colour\ of\ token\ to\ seek\ matches\ for.\r\n\ @return\ int\ matches\ holding\ current\ total\ of\ matching\ tokens.\r\n
+comment23.params=columnIndex\ colour
+comment23.target=int\ calcLeftMatch(int,\ Colour)
+comment23.text=\r\n\ Looks\ for\ matches\ to\ the\ 'LEFT'\ of\ the\ test\ slot.\ If\ match\ found\r\n\ tests\ the\ next\ LEFT\ column.\ \ Example\ Board\:\r\n\ 0|__|___|___|___|___|___|___|\ \r\n\ 1|\ __|___|___|___|___|_R_|_Y_|\ \r\n\ 2|\ *_|_*_|_*_|_T_|_R_|_R_|_Y_|\ T\ \=\ Test\ slot\ \r\n\ 3|\ Y_|_y_|_R_|_Y_|_Y_|_Y_|_R_|\ *\ \=\ Potential\ match\ slots\ tested\ by\ method\ \r\n\ 4|\ R_|_R_|_Y_|_R_|_R_|_Y_|_R_|\ R\ \=\ Red\ Token\ \r\n\ 5|\ Y_|_R_|_R_|_R_|_Y_|_Y_|_R_|\ Y\ \=\ Yellow\ Token\ \r\n\ \ \ \ 0\ |\ 1\ |\ 2\ |\ 3\ |\ 4\ |\ 5\ |\ 6\ |\r\n\ \r\n\ @param\ columnIndex\ column\ number\ to\ test\ lowest\ empty\ slot\ of.\r\n\ @param\ colour\ colour\ of\ token\ to\ seek\ matches\ for.\r\n\ @return\ int\ matches\ holding\ current\ total\ of\ matching\ tokens.\r\n
+comment24.params=columnIndex\ colour
+comment24.target=int\ calcRightMatch(int,\ Colour)
+comment24.text=\r\n\ Looks\ for\ matches\ to\ the\ 'RIGHT'\ of\ the\ test\ slot.\ If\ match\ found\r\n\ tests\ the\ next\ LEFT\ column.\ \ Example\ Board\:\r\n\ 0|___|___|___|___|___|___|___|\ \r\n\ 1|\ __|___|___|___|___|___|___|\ \r\n\ 2|\ R_|_R_|_Y_|_T_|_*_|_*_|_*_|\ T\ \=\ Test\ slot\ \r\n\ 3|\ Y_|_y_|_R_|_Y_|_Y_|_Y_|_R_|\ *\ \=\ Potential\ match\ slots\ tested\ by\ method\ \r\n\ 4|\ R_|_R_|_Y_|_R_|_R_|_Y_|_R_|\ R\ \=\ Red\ Token\ \r\n\ 5|\ Y_|_R_|_R_|_R_|_Y_|_Y_|_R_|\ Y\ \=\ Yellow\ Token\ \r\n\ \ \ \ 0\ |\ 1\ |\ 2\ |\ 3\ |\ 4\ |\ 5\ |\ 6\ |\r\n\ \r\n\ @param\ columnIndex\ column\ number\ to\ test\ lowest\ empty\ slot\ of.\r\n\ @param\ colour\ colour\ of\ token\ to\ seek\ matches\ for.\r\n\ @return\ int\ matches\ holding\ current\ total\ of\ matching\ tokens.\r\n
+comment3.params=colour
+comment3.target=Match\ getBestVerticalMatch(Colour)
+comment3.text=\r\n\ Compares\ all\ of\ the\ columns\ in\ the\ game\ for\ the\ highest\ number\ vertical\r\n\ matches\ of\ the\ Colour\ passed\ in.\r\n\ @param\ colour\ the\ Colour\ to\ find\ matches\ of.\r\n\ @return\ Match\ object\ with\ the\ column\ that\ has\ the\ highest\ number\ of\ Colour\ matches.\r\n
+comment4.params=colour
+comment4.target=Match\ getBestHorizontalMatch(Colour)
+comment4.text=\r\n\ Compares\ all\ of\ the\ columns\ for\ the\ highest\ number\ of\ horizontal\ matches\r\n\ of\ the\ Colour\ passed\ in.\r\n\ \r\n\ @param\ colour\ colour\ to\ find\ horizontal\ matches\ for.\r\n\ @return\ Match\ bestHorizontalMatch\ containing\ the\ highest\ matches\ of\r\n\ colour\ and\ which\ column\ that\ is.\r\n
+comment5.params=colour
+comment5.target=Match\ getBestDiagonalMatch(Colour)
+comment5.text=\r\n\ Determines\ the\ Column\ that\ has\ the\ highest\ number\ of\ diagonal\ matches\ for\r\n\ the\ Colour\ passed\ in.\r\n\ \r\n\ @param\ colour\ the\ Colour\ to\ find\ matches\ for\r\n\ @return\ Match\ match\ holding\ the\ column\ and\ the\ highest\ number\ of\ matches.\r\n
+comment6.params=
+comment6.target=int\ getMiddleColumn()
+comment6.text=\r\n\ In\ case\ the\ game\ board\ has\ an\ unexpected\ number\ of\ rows\ this\ method\ uses\r\n\ the\ total\ number\ of\ Columns\ to\ determine\ the\ middle\ Column.\r\n\ \r\n\ @return\ int\ the\ number\ of\ the\ middle\ Column\r\n
+comment7.params=
+comment7.target=void\ move()
+comment7.text=\r\n\ The\ move\ method\ is\ run\ every\ time\ it\ is\ this\ agent's\ turn\ in\ the\ game.\r\n\ You\ may\ assume\ that\ when\ move()\ is\ called,\ the\ game\ has\ at\ least\ one\ open\r\n\ slot\ for\ a\ token,\ and\ the\ game\ has\ not\ already\ been\ won.\r\n\ \r\n\ By\ the\ end\ of\ the\ move\ method,\ the\ agent\ should\ have\ placed\ one\ token\r\n\ into\ the\ game\ at\ some\ point.\r\n\ \r\n\ After\ the\ move()\ method\ is\ called,\ the\ game\ engine\ will\ check\ to\ make\r\n\ sure\ the\ move\ was\ valid.\ A\ move\ might\ be\ invalid\ if\:\ -\ No\ token\ was\ place\r\n\ into\ the\ game.\ -\ More\ than\ one\ token\ was\ placed\ into\ the\ game.\ -\ A\r\n\ previous\ token\ was\ removed\ from\ the\ game.\ -\ The\ color\ of\ a\ previous\ token\r\n\ was\ changed.\ -\ There\ are\ empty\ spaces\ below\ where\ the\ token\ was\ placed.\r\n\ \r\n\ If\ an\ invalid\ move\ is\ made,\ the\ game\ engine\ will\ announce\ it\ and\ the\ game\r\n\ will\ be\ ended.\r\n\ \r\n
+comment8.params=nextMove
+comment8.target=boolean\ validNextMove(Match)
+comment8.text=\r\n\ Checks\ that\ the\ next\ move\ will\ be\ made\ in\ a\ column\ within\ the\ borders\ of\r\n\ the\ game.\r\n\ \r\n\ @param\ nextMove\r\n\ @return\ true\ if\ move\ possible.\r\n
+comment9.params=colour
+comment9.target=Match\ findBestMatch(Colour)
+comment9.text=\r\n\ Finds\ the\ slot\ that\ has\ the\ highest\ number\ of\ matching\ tokens\ nearby\ for\r\n\ making\ connect\ four.\r\n\ \r\n\ @param\ colour\ is\ colour\ of\ token\ to\ find\ best\ match\ for.\r\n\ @return\r\n
+numComments=25
